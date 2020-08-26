@@ -1,13 +1,25 @@
 package com.example.springboot.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+/**
+ * @Description:
+ */
+@Data
+@AllArgsConstructor
 public class User {
+
+    private static final long serialVersionUID = 1L;
+
     private Integer id;
-
-    private String username;
-
+    private String userName;
+    private String name;
     private String password;
 
-    private Integer enable;
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
     public Integer getId() {
         return id;
@@ -17,12 +29,20 @@ public class User {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPassword() {
@@ -30,14 +50,6 @@ public class User {
     }
 
     public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
-    }
-
-    public Integer getEnable() {
-        return enable;
-    }
-
-    public void setEnable(Integer enable) {
-        this.enable = enable;
+        this.password = password;
     }
 }
